@@ -3,19 +3,37 @@
       <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
       <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
       <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+      <style>
+        .center-div {
+          position: absolute;
+          top:  45%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+        body{
+           font-family: Helvetica, sans-serif;
+        }
+      </style>
+      <title>Sample Video</title>
    </head>
    <body>
+     <div class="center-div">
+      <h1>Big Buck Bunny</h1>
       <video
          id="my-video"
-         class="video-js"
-         controls
-         preload="auto"
-         width="640"
-         height="264"
+         class="video-js vjs-big-play-centered"
+         width="960"
+         height="540"
          poster="MY_VIDEO_POSTER.jpg"
-         data-setup="{}"
-         >
-         <source src="static/bbb_sunflower_1080p_30fps_normal.mp4" type="video/mp4" />
+         data-setup='{
+             "controls":true,
+             "preload":true,
+             "controlBar":{
+                "pictureInPictureToggle":false
+             }
+          }'
+          >
+         <source src="https://gateway.tardigradeshare.io/delta2-2/bbb_sunflower_1080p_30fps_normal.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=jv746ht36qmz45s3ss3qzme5enda%2F20210214%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210214T000243Z&X-Amz-Expires=86400&X-Amz-Signature=8d53f4d1244eb460810cd89035b09f7cfaf7075e47f82778a517f2af6c337558&X-Amz-SignedHeaders=host" type="video/mp4" />
          <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
             web browser that
@@ -24,6 +42,9 @@
                >
          </p>
       </video>
+      </div>
+
       <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
    </body>
 </html>
