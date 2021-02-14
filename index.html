@@ -1,50 +1,112 @@
-<html>
-   <head>
-      <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
-      <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-      <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-      <style>
-        .center-div {
-          position: absolute;
-          top:  45%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-        }
-        body{
-           font-family: Helvetica, sans-serif;
-        }
-      </style>
-      <title>Sample Video</title>
-   </head>
-   <body>
-     <div class="center-div">
-      <h1>Big Buck Bunny</h1>
-      <video
-         id="my-video"
-         class="video-js vjs-big-play-centered"
-         width="960"
-         height="540"
-         poster="MY_VIDEO_POSTER.jpg"
-         data-setup='{
-             "controls":true,
-             "preload":true,
-             "controlBar":{
-                "pictureInPictureToggle":false
-             }
-          }'
-          >
-         <source src="https://gateway.tardigradeshare.io/delta2-2/bbb_sunflower_1080p_30fps_normal.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=jv746ht36qmz45s3ss3qzme5enda%2F20210214%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210214T000243Z&X-Amz-Expires=86400&X-Amz-Signature=8d53f4d1244eb460810cd89035b09f7cfaf7075e47f82778a517f2af6c337558&X-Amz-SignedHeaders=host" type="video/mp4" />
-         <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-               >supports HTML5 video</a
-               >
-         </p>
-      </video>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Video</title>
+
+    <!-- Video.js -->
+    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="video.css" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+  <p class="h5 my-0 me-md-auto fw-normal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16" style="position: relative; top:-1px;">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+    </svg>
+    Video
+  </p>
+  <!--<nav class="my-2 my-md-0 me-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>-->
+  <a class="btn btn-outline-primary" href="#">Admin</a>
+</header>
+
+<main class="container">
+  <div class="text-center pt-3">
+    <video
+       id="my-video"
+       class="video-js vjs-big-play-centered"
+       width="960"
+       height="540"
+       poster="MY_VIDEO_POSTER.jpg"
+       data-setup='{
+           "controls":true,
+           "preload":true,
+           "controlBar":{
+              "pictureInPictureToggle":false
+           }
+        }'
+        >
+       <source src="https://gateway.tardigradeshare.io/delta2-2/bbb_sunflower_1080p_30fps_normal.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=jv746ht36qmz45s3ss3qzme5enda%2F20210214%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210214T000243Z&X-Amz-Expires=86400&X-Amz-Signature=8d53f4d1244eb460810cd89035b09f7cfaf7075e47f82778a517f2af6c337558&X-Amz-SignedHeaders=host" type="video/mp4" />
+       <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+             >supports HTML5 video</a
+             >
+       </p>
+    </video>
+    <div class="pt-3" style="text-align: left;">
+      <h3>Big Buck Bunny</h3>
+      <p>Hello World!</p>
+    </div>
+  </div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="../assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+        <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
       </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</main>
+
+
 
       <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-
-   </body>
+  </body>
 </html>
