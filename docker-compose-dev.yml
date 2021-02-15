@@ -1,0 +1,38 @@
+version: "3.8"
+
+volumes:
+  postgres-data:
+  ui-dist:
+
+services:
+  redis:
+    image: redis:latest
+  server:
+    build: server
+    links:
+      - "redis:redis"
+    volumes:
+      - ./server/lib:/usr/src/app/lib
+      - ./server/models:/usr/src/app/models
+      - ./server/routes:/usr/src/app/routes
+      - ./server/scripts:/usr/src/app/scripts
+      - ./server/index.js:/usr/src/app/index.js
+    command: [ "/bin/bash", "-c", "npm -g install nodemon && nodemon index.js" ]
+  ui:
+    build:
+        context: ui
+        dockerfile: Dockerfile
+    ports:
+        - "127.0.0.1:3000:80"
+    links:
+      - "server:server"
+    volumes:
+        - ui-dist:/usr/share/nginx/html
+  ui-watcher:
+    build:
+        context: ui
+        dockerfile: Dockerfile-watcher
+    volumes:
+        - ui-dist:/app/dist
+        - ./ui/src:/app/src
+        - ./ui/public:/app/public

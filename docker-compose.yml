@@ -1,0 +1,26 @@
+version: "3.8"
+
+volumes:
+  postgres-data:
+
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=vortex
+  redis:
+    image: redis:latest
+  server:
+    build: server
+    links:
+      - "postgres:postgres"
+      - "redis:redis"
+  ui:
+    build: ui
+    ports:
+        - "127.0.0.1:3000:80"
+    links:
+      - "server:server"
